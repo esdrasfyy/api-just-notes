@@ -10,6 +10,11 @@ const LoginController = require("./controllers/LoginController");
 const checkAuthentication = require("./middlewares/authMiddleware");
 
 module.exports = routes;
+// default
+routes.get("/", (req, res) =>{
+    res.status(200).json({msg: "Welcome"})
+});
+
 //rota annotaions
 routes.post("/notes/:user", AnnotationsController.create);
 routes.get("/user/:username", AnnotationsController.read);
